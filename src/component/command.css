@@ -1,0 +1,13 @@
+.monCat img{
+    height: 150px;
+    width: 150px;
+}
+
+.monCat{
+    display: flex;
+    
+}
+
+.right{
+    margin-left:auto ;
+}

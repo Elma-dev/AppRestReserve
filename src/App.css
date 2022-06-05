@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+
+.navbar{
+    background-color:mediumpurple;
+}
+.items{
+    color:white !important;
+    font-size: 20px;
+    margin-left: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.items:hover{
+    background:  rgb(136, 106, 197); 
+    border-radius: 20px;
+    border-bottom:1px solid  ;
+}
+nav a.active{
+    background:rgb(136, 106, 197);
+    border-bottom:1px solid yellow ;
+    border-radius: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.theadbg{
+    background:rgb(136, 106, 197);
+}
+.menagerLogo{
+    color: yellow;
+}
+
+.tabl{
+    margin-top:10px;
+    display: flex;
+    flex-flow: row wrap;
+}
+.tabl img{
+    height: 200px;
+    width: 200px;
+}
+
+.tabl .navlink{
+    text-decoration: none;
+    padding: 20px;
+    margin-left: 10px; 
+}
+
+.textimage{
+    color:darkgray;
+    font-size: 70px;
+    position: absolute;
+    font-weight: bold;
+    top: 53%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+}
+
+.cont{
+    position: relative;
+    color: white;
   }
+
+.imguser{
+    height: 80px;
+    width: 80px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn-primary {
+    color: #fff;
+    background-color: mediumpurple !important;
+    border-color: mediumpurple !important;
 }
 
-.App-link {
-  color: #61dafb;
+.mtop{
+    margin-top: 140px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.border-primary {
+    border-color: #9370db!important;
+}
+
+.btn-bd-lgout {
+    font-weight: 500;
+    color: #ffe484;
+    border-color: #ffe484;
 }
