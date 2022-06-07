@@ -18,6 +18,7 @@ import QrTable  from './component/QrTable';
 import Client from './component/Client';
 import Command from './component/Command';
 import Menu from './component/Menu';
+import Card from './component/Card';
 
 
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/table/:id" element={<Tables/>} />
           <Route path="/rest:r/tab:t" element={<Client/>} />
           <Route path="/command" element={<Command/>} />
+          <Route path="/payementCard" element={<Card/>} />
         </Routes>
         </Userinfo.Provider> 
       </BrowserRouter>

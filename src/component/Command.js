@@ -7,10 +7,12 @@ import './command.css'
 import logo from './iconRest.png'
 import axios from 'axios'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+
 function Command() {
     const data=useLocation().state
     const Comm=data.myCom;
     const [payType,setType]=useState(null);
+    
     
     const totale=()=>{
       let totale=0;
@@ -44,7 +46,7 @@ function Command() {
         form.append('prixTot',tot);
         form.append('payType',payType);
         form.append('nomPlats',nomPlats);
-
+        
         axios.post("http://localhost/reactTest/mysite/src/component/api/command.php",form,{headers:{'Content-type':'multipart/form-data'}})
         .then(resp=>resp.data)
         .then(data=>{ 
@@ -54,6 +56,22 @@ function Command() {
             }
           }
         )
+      }
+      else{
+        let nomPlats=[];
+        for(let i=0;i<Comm.length;i++){
+          nomPlats.push(Comm[i].nomPlat);
+        }
+        navigate("/payementCard",{
+          state: {
+            id:data.data.r,
+            table:data.data.t,
+            nbrPlat:Comm.length,
+            prixTot:tot,
+            payType:payType,
+            nomPlats:nomPlats
+          }})
+       
       }
     }
 
@@ -103,7 +121,7 @@ function Command() {
               />
                <Form.Check
                   inline
-                  label="PAYPALE"
+                  label="Card"
                   value="paypal"
                   name="g1"
                   type='radio'
