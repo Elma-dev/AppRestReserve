@@ -17,8 +17,16 @@
             $description=$_POST['description'];
             $url=$_POST['url'];
             $prix=$_POST['prix'];
+            
+            $idMen=$db->prepare("select idMenu from menu where idMenager=$id;");
+            
+            $idMen->execute();
 
-            $r=$db->prepare("select id from categorie where nomCat='$nomCat';");
+            $idMenu=$idMen->fetchAll();
+            $idMenu=$idMenu[0]['idMenu'];
+            echo $idMenu;
+            $r=$db->prepare("select id from categorie where nomCat='$nomCat' and idMenu=$idMenu;");
+            
             $r->execute();
             $idCat=$r->fetchAll();
             $idCat=$idCat[0]['id'];

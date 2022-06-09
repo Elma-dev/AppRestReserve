@@ -80,6 +80,7 @@ export default function Menu() {
             form.append("prix",inputData.price);
             form.append("description",inputData.description);
             form.append("url",inputData.url);
+            form.append('id',data.id);
             axios.post("http://localhost/ReactTest/mysite/src/component/api/category.php",form,{headers:{'Content-type':'multipart/form-data'}})
             .then(window.location.reload())
 
